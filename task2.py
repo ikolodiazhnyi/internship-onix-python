@@ -1,50 +1,54 @@
+# Copying list
+from copy import copy
+
 # Create a numeric variable
-numFloat = 1.1
+num_float = 1.1
 
 # Create a string variable
-strName = "Igor Kolodiazhnyi"
+str_name = "Igor Kolodiazhnyi"
 
-# Compare numFloat's type with strName's type.
-# Convert numFloat in string
-print("Types match" if type(numFloat) == type(strName) else "Types don't match")
-numFloat = str(numFloat)
-print("New numFloat type is", type(numFloat))
+# Compare num_float's type with str_name's type.
+# Convert num_float in string
+print("Types match" if type(num_float) == type(str_name) else "Types don't match")
+num_float = str(num_float)
+print("New num_float type is", type(num_float))
 
 # Create the fruits list
-listFruits = ['Lime', 'Kiwi', 'Fig', 'Papaya', 'Mango']
-print('Fruits list (initial state):', listFruits)
+list_fruits = ['Lime',
+                'Kiwi',
+                'Fig',
+                'Papaya',
+                'Mango']
+print('Fruits list (initial state):', list_fruits)
 
 # Add an element into the end of the list.
 # Add an element into the list by index.
-listFruits.append('Tomato')
-print('Fruits list (added in the end \'Tomato\'):', listFruits)
-listFruits.insert(3, 'Apple')
-print('Fruits list (added \'Apple\' by index 3)', listFruits)
+list_fruits.append('Tomato')
+print('Fruits list (added in the end \'Tomato\'):', list_fruits)
+list_fruits.insert(3, 'Apple')
+print('Fruits list (added \'Apple\' by index 3)', list_fruits)
 
 # Delete the first element of the list (remove).
 # Delete an element from the list by index (pop).
 # Actually both operations could be done with pop method
-listFruits.remove(listFruits[0])
-print('Fruit list (removed the first element)', listFruits)
-listFruits.pop(5)
-print('Fruit list (removed the element with index 5)', listFruits)
+list_fruits.remove(list_fruits[0])
+print('Fruit list (removed the first element)', list_fruits)
+list_fruits.pop(5)
+print('Fruit list (removed the element with index 5)', list_fruits)
 
 # Reverse the list
-listFruits.reverse()
-print('Reversed fruit list:', listFruits)
+list_fruits.reverse()
+print('Reversed fruit list:', list_fruits)
 
 # Print number of elements in the list
-print('Number of elements in the fruit list:', len(listFruits))
+print('Number of elements in the fruit list:', len(list_fruits))
 
-# Make a list copy.
-# Found the info that list.copy method doesn't work both in python 2.x and python 3.x.
-# I've got the message "'list' object has no attribute 'copy'"
-listFruitsCopy = list(listFruits)
-print('Fruit list copy:', listFruitsCopy)
-
+# Make a list copy
+list_fruits_copy = copy(list_fruits)
+print('Fruit list copy:', list_fruits_copy)
 
 # Sort a list with a sorting algorithm (quick sort)
-def quickSort(arr):
+def quick_sort(arr):
     # The base case when array consists 0 or 1 element
     if len(arr) < 2:
         return arr
@@ -56,67 +60,62 @@ def quickSort(arr):
         # The subarray with elemetns greater pivot
         higher = [i for i in arr[1:] if i > pivot]
 
-        return quickSort(lower) + [pivot] + quickSort(higher)
+        return quick_sort(lower) + [pivot] + quick_sort(higher)
 
-
-print('Sorted fruit list (quick sort):', quickSort(listFruits))
+print('Sorted fruit list (quick sort):', quick_sort(list_fruits))
 
 # Sort a list with basic sorting algorithm
-listFruitsCopy.sort()
-print('Sorted copied fruit list (sorted())', listFruitsCopy)
+list_fruits_copy.sort()
+print('Sorted copied fruit list (sorted())', list_fruits_copy)
 
 # Create a list with unique words of provided string
-strLine = "This is a test string for Internship Onix for python"
+str_line = "This is a test string for Internship Onix for python"
 # First, make a list out of a string. Then find unique values
-listUnique = list(set(strLine.split()))
-print('List with unique values of provided string', listUnique)
+list_unique = list(set(str_line.split()))
+print('List with unique values of provided string', list_unique)
 
 # Sort a list alphabetically in a reverse order
-listUnique = sorted(listUnique, key=str.lower, reverse=True)
-print('Unique list sorted alphabetically in a reverse order', listUnique)
+list_unique = sorted(list_unique, key=str.lower, reverse=True)
+print('Unique list sorted alphabetically in a reverse order', list_unique)
 
 # Create a dictionary
-dictTaskDiff = {1: "Easy",
-                3: "Hard",
-                2: "Medium"}
-print("Created the task difficulties dictionary:", dictTaskDiff)
+dict_task_diff = {1: "Easy",
+                  3: "Hard",
+                  2: "Medium"}
+print("Created the task difficulties dictionary:", dict_task_diff)
 
 # Add an element into dictionary, get a value from the dict by a key, delete an element,
 # get all keys, get all values.
-dictTaskDiff[4] = "God like"
-print("Added new element into dictionary:", dictTaskDiff)
-print("Got value by key:", dictTaskDiff[1])
-dictTaskDiff.pop(4)
-print("Deleted an element from dictionary:", dictTaskDiff)
-print("Get all keys: ", dictTaskDiff.keys())
-print("Get all values: ", dictTaskDiff.values())
-
+dict_task_diff[4] = "God like"
+print("Added new element into dictionary:", dict_task_diff)
+print("Got value by key:", dict_task_diff[1])
+dict_task_diff.pop(4)
+print("Deleted an element from dictionary:", dict_task_diff)
+print("Get all keys: ", dict_task_diff.keys())
+print("Get all values: ", dict_task_diff.values())
 
 # Sort dict by keys
-def sortDictByKeys(dictSourse):
+def sort_dict_by_keys(dict_source):
     # Create new dict
-    dictRes = {}
+    dict_res = {}
     # Fill in new dict with sorted key and value
-    for key, value in sorted(dictTaskDiff.items()):
-        dictRes.update({key: value})
+    for key, value in sorted(dict_source.items()):
+        dict_res.update({key: value})
 
-    return dictRes
+    return dict_res
 
-
-dictTaskDiff = sortDictByKeys(dictTaskDiff)
-print("Dict is sorted by keys:", dictTaskDiff)
-
+dict_task_diff = sort_dict_by_keys(dict_task_diff)
+print("Dict is sorted by keys:", dict_task_diff)
 
 # Sort dict by values
-def sortDictByValues(dictSourse):
+def sort_dict_by_values(dict_source):
     # Create new dict
-    dictRes = {}
+    dict_res = {}
 
-    for key, value in sorted(dictTaskDiff.items(), key=lambda x: x[1]):
-        dictRes.update({key: value})
+    for key, value in sorted(dict_source.items(), key=lambda x: x[1]):
+        dict_res.update({key: value})
 
-    return dictRes
+    return dict_res
 
-
-dictTaskDiff = sortDictByValues(dictTaskDiff)
-print("Dict is sorted by values:", dictTaskDiff)
+dict_task_diff = sort_dict_by_values(dict_task_diff)
+print("Dict is sorted by values:", dict_task_diff)
