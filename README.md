@@ -26,4 +26,4 @@ The list of topics to be covered:
 * random 
 * exceptions
 
-<a href="https://onix.kr.ua/"><img src="https://onix.kr.ua/wp-content/uploads/2018/02/Logo-Slogan-White.jpg" title="Onix-Systems" alt="Onix-Systems"></a>
+<a href="https://onix.kr.ua/"><img src="https://s.dou.ua/CACHE/images/img/static/companies/Logo_Blue/48480b285e1f75e784e3ff854122d495.png" title="Onix-Systems" alt="Onix-Systems"></a>
