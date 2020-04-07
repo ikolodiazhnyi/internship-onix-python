@@ -1,3 +1,5 @@
+<a href="https://onix.kr.ua/"><img src="https://s.dou.ua/CACHE/images/img/static/companies/Logo_Blue/48480b285e1f75e784e3ff854122d495.png" title="Onix-Systems" alt="Onix-Systems"></a>
+
 # Internship at Onix
 
 In this repository I do some assignments in order to pass the internship at Onix
@@ -25,5 +27,3 @@ The list of topics to be covered:
 * datetime 
 * random 
 * exceptions
-
-<a href="https://onix.kr.ua/"><img src="https://s.dou.ua/CACHE/images/img/static/companies/Logo_Blue/48480b285e1f75e784e3ff854122d495.png" title="Onix-Systems" alt="Onix-Systems"></a>
