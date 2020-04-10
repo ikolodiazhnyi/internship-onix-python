@@ -11,7 +11,8 @@ The list of topics to be covered:
 ***branch2***
 * python data types 
 * list functions 
-* dict functions sorting
+* dict functions 
+* sorting
 
 ***branch3***
 * functions 
