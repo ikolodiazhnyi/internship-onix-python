@@ -28,4 +28,7 @@ The list of topics to be covered:
 * random 
 * exceptions
 
+***branch6*** 
+* MySQL
+
 <img src="https://pbs.twimg.com/media/DTUh_xPX0AA20si.jpg" width="1100" height="400">
