@@ -6,6 +6,6 @@ def main(request):
     return HttpResponse("Main page")
 
 
-def additional(request, _str='OK'):
+def additional(request, line):
 
-    return HttpResponse(_str)
+    return HttpResponse(line)

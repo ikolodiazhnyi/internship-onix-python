@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf import settings
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
 from locations import views
 
 from django.conf.urls.static import static
@@ -23,7 +23,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.main, name='main'),
-    path('additional', views.additional, name='next'),
+    path('<str:line>/', views.additional, name='additional'),
     path('admin/', admin.site.urls),
 ]
 
