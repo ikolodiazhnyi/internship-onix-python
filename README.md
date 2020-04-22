@@ -32,4 +32,7 @@ The list of topics to be covered:
 ***branch6*** 
 * MySQL
 
+***branch7*** 
+* Django
+
 <img src="https://pbs.twimg.com/media/DTUh_xPX0AA20si.jpg" width="1100" height="400">
