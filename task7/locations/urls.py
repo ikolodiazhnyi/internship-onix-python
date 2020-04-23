@@ -4,6 +4,6 @@ from locations import views
 
 urlpatterns = [
     path('', views.main, name='main'),
-    path('additional', views.additional)
+    path('<str:line>/', views.additional)
 ]
 
