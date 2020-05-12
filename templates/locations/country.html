@@ -1,0 +1,30 @@
+{% extends  'base.html' %}
+
+{% block title %} CountryHub/{{country.name}}/CitiesList {% endblock %}
+
+{% block additional_styles %}
+<style>
+div {
+    width: 50%;
+    padding: 10px;
+   }
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="d-flex justify-content-center">
+    <div>
+        <h5 class="mb-1">{{country.name}}</h5>
+        {% for city in cities %}
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a href="/city/{{ city.id }}/">{{city.name}}</a>
+            </li>
+        </ul>
+        {% endfor %}
+        <a href="{%url 'logout'%}">
+            <button type="button" class="btn btn-light">Logout</button>
+        </a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,28 @@
+<!doctype  html>
+{% load crispy_forms_tags %}
+
+<html  lang="en">
+<head>
+    <link  rel="stylesheet"  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"  crossorigin="anonymous">
+    <title>  </title>
+</head>
+
+<body>
+<div class="d-flex justify-content-lg-center">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Log in to your account</h4>
+
+            <form method="post">
+                {% csrf_token %}
+                <input type="hidden" name="next" value="{{ next }}">
+
+                {{ form|crispy }}
+
+                <button type="submit" class="btn btn-primary btn-block">Log in</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
