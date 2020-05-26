@@ -28,18 +28,15 @@ def get_countries(request, *args, **kwargs):
 
 @login_required
 def get_country_and_cities(request, id_country):
-    if request.user.is_authenticated:
-        country_name = get_object_or_404(Country, id=id_country)
-        cities_of_country = country_name.city_set.all()
+    country_name = get_object_or_404(Country, id=id_country)
+    cities_of_country = country_name.city_set.all()
 
-        content = {
-            'cities': cities_of_country,
-            'country': country_name,
-        }
+    content = {
+        'cities': cities_of_country,
+        'country': country_name,
+    }
 
-        return render(request, 'locations/country.html', content)
-    else:
-        return redirect('/login/')
+    return render(request, 'locations/country.html', content)
 
 
 @login_required
