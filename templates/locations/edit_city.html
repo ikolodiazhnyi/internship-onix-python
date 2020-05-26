@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %} CountryHub {% endblock %}
+
+{% block additional_styles %}
+<style>
+div {
+    width: 50%;
+    padding: 10px;
+   }
+</style>
+{% endblock %}
+
+{% block body %}
+<div>
+    <div class="city">
+        <h1> Edit {{city.name}}</h1>
+        <form method="post" class="post-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="save btn btn-default">Save</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
