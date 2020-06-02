@@ -5,10 +5,21 @@
     <title>
         {% block title %} {% endblock %}
     </title>
+
     {% block additional_styles %} {% endblock %}
     {% block additional_scripts %} {% endblock%}
 </head>
 <body>
+<nav class="navbar navbar-expand-sm bg-light navbar-light">
+    <th class="navbar-nav">
+        {% for country in request.country_list %}
+    <td class="nav-item active">
+        <a class="nav-link" href="/country/{{ country.id }}/">{{country.name}}</a>
+    </td>
+    {% endfor %}
+    </th>
+</nav>
 {% block body %} {% endblock %}
 </body>
 </html>
+

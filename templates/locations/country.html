@@ -12,19 +12,26 @@ div {
 {% endblock %}
 
 {% block body %}
-<div class="d-flex justify-content-center">
-    <div>
+<div>
+    <div class=" justify-content-center">
         <h5 class="mb-1">{{country.name}}</h5>
         {% for city in cities %}
         <ul class="list-group">
             <li class="list-group-item d-flex justify-content-between align-items-center">
                 <a href="/city/{{ city.id }}/">{{city.name}}</a>
+                <a class="btn btn-default" href="{% url 'edit_city' id_city=city.id %}">
+                    <button type="button" class="btn btn-secondary btn-sm">Edit</button>
+                </a>
             </li>
+            {% endfor %}
         </ul>
-        {% endfor %}
-        <a href="{%url 'logout'%}">
-            <button type="button" class="btn btn-light">Logout</button>
-        </a>
     </div>
 </div>
+<a href="{% url 'add_new_city' id_country=country.id %}" class="btn btn-light">
+    <button type="button" class="btn btn-light">Add city</button>
+</a>
+<a href="{%url 'logout'%}">
+    <button type="button" class="btn btn-light">Logout</button>
+</a>
+
 {% endblock %}

@@ -12,22 +12,30 @@ div {
 {% endblock %}
 
 {% block body %}
-<div class="d-flex justify-content-center">
-    <div>
+<div>
+    <div class="d-flex justify-content-center">
         <ul class="list-group">
             {% for country in countries %}
             <li class="list-group-item d-flex justify-content-between align-items-center">
                 <a href="/country/{{ country.id }}/">{{country.name}}</a>
                 <span class="badge badge-primary badge-pill">{{country.cities_count}}</span>
+                <a class="btn btn-default" href="{% url 'edit_country' id_country=country.id %}">
+                    <button type="button" class="btn btn-secondary btn-sm">Edit</button>
+                </a>
             </li>
-             <li class="list-group-item d-flex justify-content-between align-items-center">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
                 <p>{{country.description|short_line:150}}</p>
             </li>
+            <p></p>
             {% endfor %}
         </ul>
-        <a href="{%url 'logout'%}">
-            <button type="button" class="btn btn-light">Logout</button>
-        </a>
     </div>
 </div>
+<a href="{% url 'add_new_country' %}" class="btn btn-light">
+    <button type="button" class="btn btn-light">Add country</button>
+</a>
+
+<a href="{% url 'logout'%}">
+    <button type="button" class="btn btn-light">Logout</button>
+</a>
 {% endblock %}
