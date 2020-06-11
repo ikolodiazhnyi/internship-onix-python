@@ -1,9 +1,11 @@
-from rest_framework import serializers
+from rest_framework import serializers, viewsets
 
 from locations.models import Country, City, Symbol
 
 
-class CountrySerializer(serializers.HyperlinkedModelSerializer):
+class CountrySerializer(serializers.ModelSerializer):
+    name = serializers.PrimaryKeyRelatedField(read_only=True)
+
     class Meta:
         model = Country
         fields = [
@@ -15,7 +17,13 @@ class CountrySerializer(serializers.HyperlinkedModelSerializer):
         ]
 
 
-class CitySerializer(serializers.HyperlinkedModelSerializer):
+class CountryIdSerializer(serializers.Serializer):
+    country_id = serializers.IntegerField()
+
+
+class CitySerializer(serializers.ModelSerializer):
+    country = CountrySerializer()
+
     class Meta:
         model = City
         fields = [
@@ -26,7 +34,9 @@ class CitySerializer(serializers.HyperlinkedModelSerializer):
         ]
 
 
-class SymbolSerializer(serializers.HyperlinkedModelSerializer):
+class SymbolSerializer(serializers.ModelSerializer):
+    image = serializers.ImageField()
+
     class Meta:
         model = Symbol
         fields = [
